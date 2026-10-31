@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatística para Pesquisa - Guia Educativo</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-hover: #4338ca;
+      --primary-light: #e0e7ff;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --bg-light: #f9fafb;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .topo {
+      background-color: #1e1b4b;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .topo .logo {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .topo .logo:hover {
+      opacity: 0.9;
+    }
+
+    .topo nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    .topo nav a {
+      color: #c7d2fe;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .topo nav a:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
+      color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .badge {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #c7d2fe;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin: 50px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      border-left: 5px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .example-box {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      border: 1px solid #7dd3fc;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    .example-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .example-icon {
+      font-size: 2rem;
+    }
+
+    .example-header h3 {
+      color: #0369a1;
+      font-size: 1.3rem;
+    }
+
+    .example-body p {
+      color: #0c4a6e;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+    }
+
+    .example-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .detail-card {
+      display: flex;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      gap: 20px;
+    }
+
+    .detail-number {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.4rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-content h3 {
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .detail-content p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .detail-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .detail-content ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+
+    .detail-content ul li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .info-box {
+      background-color: var(--bg-light);
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 10px;
+    }
+
+    .info-box p {
+      margin-bottom: 6px;
+      font-size: 0.93rem;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      background-color: var(--text-dark);
+      color: #9ca3af;
+      text-align: center;
+      padding: 28px 0;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== QUIZ INTERATIVO (mesmo visual do quiz de Amostragem) ===== */
+    .quiz-box {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      margin: 50px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      scroll-margin-top: 5rem;
+    }
+
+    .quiz-header {
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .quiz-badge {
+      background: #e0e7ff;
+      color: #3730a3;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .quiz-titulo {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 8px;
+    }
+
+    .quiz-subtitulo {
+      color: #475569;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      margin-top: 4px;
+    }
+
+    .quiz-progresso {
+      background: #f1f5f9;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .quiz-progresso-texto {
+      display: block;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      font-weight: 700;
+      color: #312e81;
+      margin-bottom: 4px;
+    }
+
+    .quiz-progresso-trilho {
+      width: 100%;
+      background: #e2e8f0;
+      height: 8px;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .quiz-progresso-barra {
+      background: #4f46e5;
+      height: 100%;
+      width: 20%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .quiz-card {
+      padding: 24px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .quiz-pergunta {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .quiz-opcoes {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quiz-opcao {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .quiz-opcao:hover {
+      background: rgba(238, 242, 255, 0.5);
+      border-color: #c7d2fe;
+    }
+
+    .quiz-opcao input {
+      accent-color: #4f46e5;
+      width: 16px;
+      height: 16px;
+    }
+
+    .quiz-opcao-texto {
+      color: #334155;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+    }
+
+    .quiz-opcao-texto strong {
+      color: #312e81;
+    }
+
+    .quiz-feedback {
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid;
+      font-size: 0.875rem;
+      line-height: 1.625;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .quiz-feedback-titulo {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quiz-feedback-texto {
+      color: #334155;
+    }
+
+    .quiz-feedback--ok {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #064e3b;
+    }
+
+    .quiz-feedback--erro {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      color: #881337;
+    }
+
+    .quiz-acoes {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+    }
+
+    .quiz-btn {
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding: 10px 24px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .quiz-btn:not(.quiz-btn--grande):active {
+      transform: scale(0.95);
+    }
+
+    .quiz-btn--primario {
+      background: #4f46e5;
+    }
+
+    .quiz-btn--primario:hover {
+      background: #4338ca;
+    }
+
+    .quiz-btn--sucesso {
+      background: #059669;
+    }
+
+    .quiz-btn--sucesso:hover {
+      background: #047857;
+    }
+
+    .quiz-btn--grande {
+      padding: 12px 24px;
+      border-radius: 12px;
+    }
+
+    .quiz-resultado {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 32px 16px;
+      gap: 24px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .quiz-trofeu {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      background: #e0e7ff;
+      color: #4f46e5;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      font-weight: 800;
+      box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .quiz-resultado-titulo {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .quiz-resultado-score {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: #334155;
+      margin-top: 8px;
+    }
+
+    .quiz-resultado-msg {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .quiz-hidden {
+      display: none !important;
+    }
+
+    @media (min-width: 640px) {
+      .quiz-header {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .quiz-box {
+        padding: 32px;
+      }
+
+      .quiz-titulo {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topo {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 14px 16px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .detail-card {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .detail-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="index.html">ESTATÍSTICA PARA PESQUISA</a>
+    <nav>
+      <a href="index.html">Menu principal</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Estatística Descomplicada</span>
+      <h1>População, Amostra e Representatividade</h1>
+      <p>Entenda os conceitos fundamentais que sustentam pesquisas e análises de dados confiáveis.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <h2 class="section-title">1. Conceitos Fundamentais</h2>
+      <div class="cards-grid">
+        
+        <div class="card">
+          <div class="card-icon">👥</div>
+          <h3>População</h3>
+          <p>Representa a <strong>totalidade de um grupo</strong> que possui a característica pesquisada. Não se limita a "todas as pessoas do planeta", mas sim ao grupo específico da sua pesquisa (ex: todos os idosos de São Paulo ou todas as lâmpadas produzidas num dia por uma fábrica).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧪</div>
+          <h3>Amostra</h3>
+          <p>É a <strong>fração reduzida</strong> da população consultada na prática. Como pesquisar a população inteira (Censo) é caro, demorado e exige muitos recursos, usa-se a amostra para viabilizar o estudo em tempo e custo.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Representatividade</h3>
+          <p>É a condição que <strong>valida a amostra</strong>. Para projetar resultados na população inteira, a amostra precisa ter um número suficiente de elementos (<em>n</em>) e reproduzir a diversidade e proporção real do grupo de origem.</p>
+        </div>
+
+      </div>
+
+      <!-- Exemplo Prático Destaque -->
+      <div class="example-box">
+        <div class="example-header">
+          <span class="example-icon">🎓</span>
+          <h3>Exemplo Aplicado: Pesquisa de Satisfação em uma Universidade</h3>
+        </div>
+        <div class="example-body">
+          <p><strong>População-alvo (<em>N</em>):</strong> Os 12.000 estudantes de graduação de uma universidade. Cada estudante é uma unidade amostral, e o objetivo é descobrir o parâmetro populacional: a proporção de alunos satisfeitos com a biblioteca. Em outras palavras, o valor real que só conheceríamos perguntando a todos.</p>
+          <p><strong>Amostra (<em>n</em>):</strong> Entrevistar os 12.000 alunos (Censo) seria caro e demorado. Por isso, calcula-se o tamanho da amostra: <em>n</em> = 373 estudantes, considerando margem de erro de 5% e nível de confiança de 95%.</p>
+          <p><strong>Representatividade:</strong> É a garantia de que os 373 entrevistados reproduzem a composição dos 12.000 (mesma proporção de cursos, períodos e turnos). Se fossem entrevistados apenas os alunos que estão na biblioteca, haveria viés de seleção: a amostra deixaria de fora quem não frequenta o local e distorceria o resultado.</p>
+          <p><strong>Inferência estatística:</strong> Se 78% dos 373 entrevistados se dizem satisfeitos (estimativa amostral), conclui-se que o valor real na população está entre 73% e 83%, aplicando a margem de erro de 5%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">2. Como Dimensionar uma Amostra</h2>
+      <p class="section-subtitle">Para calcular com precisão o tamanho da sua amostra, quatro fatores principais devem ser considerados:</p>
+
+      <div class="details-list">
+
+        <!-- Item 1 -->
+        <article class="detail-card">
+          <div class="detail-number">1</div>
+          <div class="detail-content">
+            <h3>Tipo de População</h3>
+            <p>Saber o tamanho total do grupo investigado antes de calcular quantos elementos você vai entrevistar:</p>
+            <ul>
+              <li><strong>População Finita:</strong> Quando o grupo é pequeno ou tem um limite bem definido (menos de 100.000 pessoas).<br><em>Exemplo:</em> Pesquisar os 300 professores de uma determinada escola ou os 5.000 alunos de uma faculdade.</li>
+              <li><strong>População Infinita:</strong> Quando não é possível contar o número exato de integrantes ou quando passa de 100.000 pessoas.<br><em>Exemplo:</em> Pesquisar o número de pessoas sedentárias em um país ou os consumidores de uma grande marca.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="detail-card">
+          <div class="detail-number">2</div>
+          <div class="detail-content">
+            <h3>Margem de Erro (<em>e</em>)</h3>
+            <p>O "desconto" ou tolerância de imprecisão do resultado.</p>
+            <div class="info-box">
+              <p><strong>Como funciona:</strong> Se a pesquisa aponta que 60% das pessoas são sedentárias com uma margem de erro de 5%, significa que o valor real na população está entre 55% e 65%.</p>
+              <p><strong>Regra prática:</strong> O padrão mais usado no meio científico é 5%. Se você quiser uma margem menor (ex: 2%), a pesquisa fica mais precisa, porém exige entrevistar muito mais gente.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="detail-card">
+          <div class="detail-number">3</div>
+          <div class="detail-content">
+            <h3>Nível de Confiança (<em>Z</em> ou <em>S</em>)</h3>
+            <p>A certeza e probabilidade de a pesquisa ter capturado a realidade.</p>
+            <div class="info-box">
+              <p><strong>Como funciona:</strong> O padrão mais adotado é 95%. Isso significa que, se você repetisse a mesma pesquisa 100 vezes (usando amostras diferentes), em 95 delas o resultado real estaria dentro da margem de erro.</p>
+              <p><strong>Regra prática:</strong> Quanto maior a confiança esperada (ex: 99%), mais exigente é o teste e maior precisará ser o tamanho da sua amostra.</p>
+            </div>
+          </div>
+        </article>
+
+    
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO QUIZ DE FIXAÇÃO INTERATIVO (PASSO A PASSO COM FEEDBACK) -->
+    <section id="quiz" class="quiz-box">
+      <div class="quiz-header">
+        <div>
+          <span class="quiz-badge">Avaliação de Conhecimento</span>
+          <h2 class="quiz-titulo">Quiz Interativo de População, Amostra e Representatividade</h2>
+          <p class="quiz-subtitulo">Responda às questões e receba o feedback detalhado a cada etapa.</p>
+        </div>
+        <!-- Barra de Progresso -->
+        <div class="quiz-progresso">
+          <span id="quiz-progress-text" class="quiz-progresso-texto">Pergunta 1 de 5</span>
+          <div class="quiz-progresso-trilho">
+            <div id="quiz-progress-bar" class="quiz-progresso-barra"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD DA PERGUNTA ATUAL -->
+      <div id="quiz-card" class="quiz-card">
+        <h3 id="quiz-question" class="quiz-pergunta">
+          <!-- Texto da Pergunta -->
+        </h3>
+
+        <!-- Opções -->
+        <div id="quiz-options" class="quiz-opcoes">
+          <!-- Opções inseridas via JS -->
+        </div>
+
+        <!-- Feedback Container (Escondido inicialmente) -->
+        <div id="quiz-feedback" class="quiz-feedback quiz-hidden">
+          <div id="quiz-feedback-title" class="quiz-feedback-titulo"></div>
+          <p id="quiz-feedback-text" class="quiz-feedback-texto"></p>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="quiz-acoes">
+          <button id="btn-confirmar" onclick="confirmarResposta()" class="quiz-btn quiz-btn--primario">
+            Confirmar Resposta
+          </button>
+          <button id="btn-proxima" onclick="proximaPergunta()" class="quiz-btn quiz-btn--sucesso quiz-hidden">
+            Próxima Pergunta ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD FINAL DE RESULTADOS (Escondido inicialmente) -->
+      <div id="quiz-result" class="quiz-resultado quiz-hidden">
+        <div class="quiz-trofeu">
+          🏆
+        </div>
+        <div>
+          <h3 class="quiz-resultado-titulo">Quiz Concluído!</h3>
+          <p id="result-score-text" class="quiz-resultado-score">
+            Você acertou X de 5 perguntas.
+          </p>
+          <p id="result-message" class="quiz-resultado-msg">
+            <!-- Mensagem personalizada -->
+          </p>
+        </div>
+        <button onclick="reiniciarQuiz()" class="quiz-btn quiz-btn--primario quiz-btn--grande">
+          🔄 Tentar Novamente
+        </button>
+      </div>
+    </section>
+
+     
+   
+  </footer>
+   <!-- FOOTER -->
+  <footer class="bg-[#1e2532] text-slate-400 py-6 text-center text-sm font-medium border-t border-slate-800">
+    Estatística Aplicada • Guia Prático e Didático
+  </footer>
+
+  <!-- LÓGICA JAVASCRIPT DO QUIZ -->
+  <script>
+    // ESTRUTURA E LÓGICA DO QUIZ DINÂMICO PASSO A PASSO
+    const perguntasQuiz = [
+      {
+        pergunta: "1. Qual é a relação correta entre População e Amostra em uma pesquisa?",
+        opcoes: [
+          { id: "A", texto: "A amostra é a totalidade do grupo pesquisado, e a população é apenas uma parte dele." },
+          { id: "B", texto: "População e amostra são sinônimos: ambas representam todas as pessoas do planeta." },
+          { id: "C", texto: "A população é a totalidade do grupo com a característica pesquisada, e a amostra é a fração reduzida dela que é consultada na prática." },
+          { id: "D", texto: "A população é o resultado final da pesquisa, e a amostra é o questionário aplicado." }
+        ],
+        correta: "C",
+        explicacao: "A População é a totalidade de um grupo que possui a característica pesquisada, e a Amostra é a fração reduzida dela que realmente é consultada. Como pesquisar a população inteira (Censo) é caro, demorado e exige muitos recursos, usa-se a amostra para viabilizar o estudo em tempo e custo."
+      },
+      {
+        pergunta: "2. No exemplo da pesquisa de satisfação na universidade, o que corresponde à Representatividade?",
+        opcoes: [
+          { id: "A", texto: "Os 12.000 estudantes de graduação da universidade." },
+          { id: "B", texto: "Os 373 estudantes efetivamente entrevistados." },
+          { id: "C", texto: "O percentual de 78% de satisfeitos encontrado na amostra." },
+          { id: "D", texto: "A garantia de que os 373 entrevistados reproduzem a composição dos 12.000 estudantes (cursos, períodos e turnos)." }
+        ],
+        correta: "D",
+        explicacao: "No exemplo, a população-alvo são os 12.000 estudantes e a amostra são os 373 entrevistados. A Representatividade é a condição que valida a amostra: a garantia de que ela reproduz a composição do grupo original. Sem isso, haveria viés de seleção e o resultado não poderia ser generalizado para toda a população."
+      },
+      {
+        pergunta: "3. Uma pesquisa vai entrevistar os 300 professores de uma determinada escola. Como essa população é classificada?",
+        opcoes: [
+          { id: "A", texto: "Finita, pois é um grupo pequeno, com limite bem definido." },
+          { id: "B", texto: "Infinita, pois todo grupo de profissionais é considerado infinito." },
+          { id: "C", texto: "Infinita, pois não é possível contar o número exato de professores." },
+          { id: "D", texto: "Não é uma população, pois 300 pessoas é um número pequeno demais." }
+        ],
+        correta: "A",
+        explicacao: "A População Finita é aquela em que o grupo é pequeno ou tem um limite bem definido (menos de 100.000 pessoas), como os 300 professores de uma escola ou os 5.000 alunos de uma faculdade. Já a População Infinita é aquela em que não é possível contar o número exato de integrantes ou que passa de 100.000 pessoas."
+      },
+      {
+        pergunta: "4. Uma pesquisa aponta que 60% das pessoas são sedentárias, com margem de erro de 5%. O que isso significa?",
+        opcoes: [
+          { id: "A", texto: "Que 5% das pessoas pesquisadas não responderam corretamente." },
+          { id: "B", texto: "Que o valor real na população está entre 55% e 65%." },
+          { id: "C", texto: "Que o valor real na população é exatamente 60%." },
+          { id: "D", texto: "Que o valor real na população está entre 60% e 65%." }
+        ],
+        correta: "B",
+        explicacao: "A margem de erro é a tolerância de imprecisão do resultado: 60% com margem de erro de 5% significa que o valor real na população está entre 55% e 65%. O padrão mais usado no meio científico é 5%; uma margem menor (ex: 2%) deixa a pesquisa mais precisa, porém exige entrevistar muito mais gente."
+      },
+      {
+        pergunta: "5. O que acontece com o tamanho da amostra quando se escolhe um nível de confiança maior, como 99% em vez do padrão de 95%?",
+        opcoes: [
+          { id: "A", texto: "Ela diminui, porque a pesquisa passa a ser menos exigente." },
+          { id: "B", texto: "Ela permanece igual, pois o nível de confiança não influencia o tamanho da amostra." },
+          { id: "C", texto: "Ela precisa ser maior, pois quanto maior a confiança esperada, mais exigente é o teste." },
+          { id: "D", texto: "Ela precisa ser exatamente do tamanho da população." }
+        ],
+        correta: "C",
+        explicacao: "O nível de confiança mais adotado é 95%: se a mesma pesquisa fosse repetida 100 vezes com amostras diferentes, em 95 delas o resultado real estaria dentro da margem de erro. Quanto maior a confiança esperada (ex: 99%), mais exigente é o teste e maior precisará ser o tamanho da amostra."
+      }
+    ];
+
+    let quizIndiceAtual = 0;
+    let quizPontuacao = 0;
+    let opcaoSelecionada = null;
+
+    function carregarPergunta() {
+      const q = perguntasQuiz[quizIndiceAtual];
+      opcaoSelecionada = null;
+
+      // Progresso
+      document.getElementById('quiz-progress-text').textContent = `Pergunta ${quizIndiceAtual + 1} de ${perguntasQuiz.length}`;
+      document.getElementById('quiz-progress-bar').style.width = `${((quizIndiceAtual + 1) / perguntasQuiz.length) * 100}%`;
+
+      // Texto da pergunta
+      document.getElementById('quiz-question').textContent = q.pergunta;
+
+      // Renderizar Opções
+      const containerOpcoes = document.getElementById('quiz-options');
+      containerOpcoes.innerHTML = '';
+
+      q.opcoes.forEach(opt => {
+        const div = document.createElement('label');
+        div.className = 'quiz-opcao';
+        div.innerHTML = `
+          <input type="radio" name="opcao-quiz" value="${opt.id}" onchange="selecionarOpcao('${opt.id}')">
+          <span class="quiz-opcao-texto"><strong>${opt.id})</strong> ${opt.texto}</span>
+        `;
+        containerOpcoes.appendChild(div);
+      });
+
+      // Reset de visibilidade
+      document.getElementById('quiz-feedback').classList.add('quiz-hidden');
+      document.getElementById('btn-confirmar').classList.remove('quiz-hidden');
+      document.getElementById('btn-proxima').classList.add('quiz-hidden');
+    }
+
+    function selecionarOpcao(id) {
+      opcaoSelecionada = id;
+    }
+
+    function confirmarResposta() {
+      if (!opcaoSelecionada) {
+        alert('Por favor, selecione uma opção antes de confirmar!');
+        return;
+      }
+
+      const q = perguntasQuiz[quizIndiceAtual];
+      const feedbackContainer = document.getElementById('quiz-feedback');
+      const feedbackTitle = document.getElementById('quiz-feedback-title');
+      const feedbackText = document.getElementById('quiz-feedback-text');
+
+      const inputs = document.querySelectorAll('input[name="opcao-quiz"]');
+      inputs.forEach(input => input.disabled = true);
+
+      if (opcaoSelecionada === q.correta) {
+        quizPontuacao++;
+        feedbackContainer.className = 'quiz-feedback quiz-feedback--ok';
+        feedbackTitle.innerHTML = '✅ Resposta Correta!';
+      } else {
+        feedbackContainer.className = 'quiz-feedback quiz-feedback--erro';
+        feedbackTitle.innerHTML = `❌ Resposta Incorreta (A resposta certa é a opção ${q.correta})`;
+      }
+
+      feedbackText.textContent = q.explicacao;
+
+      document.getElementById('btn-confirmar').classList.add('quiz-hidden');
+      document.getElementById('btn-proxima').classList.remove('quiz-hidden');
+    }
+
+    function proximaPergunta() {
+      quizIndiceAtual++;
+      if (quizIndiceAtual < perguntasQuiz.length) {
+        carregarPergunta();
+      } else {
+        exibirResultadoFinal();
+      }
+    }
+
+    function exibirResultadoFinal() {
+      document.getElementById('quiz-card').classList.add('quiz-hidden');
+      document.getElementById('quiz-result').classList.remove('quiz-hidden');
+
+      document.getElementById('result-score-text').textContent = `Você acertou ${quizPontuacao} de ${perguntasQuiz.length} perguntas! (${(quizPontuacao / perguntasQuiz.length) * 100}%)`;
+
+      const msgEl = document.getElementById('result-message');
+      if (quizPontuacao === perguntasQuiz.length) {
+        msgEl.textContent = 'Excelente! Você demonstrou domínio completo sobre população, amostra, representatividade e dimensionamento da amostra.';
+      } else if (quizPontuacao >= 3) {
+        msgEl.textContent = 'Muito bem! Você compreendeu os principais pontos sobre população, amostra e dimensionamento da amostra.';
+      } else {
+        msgEl.textContent = 'Vale a pena revisar o conteúdo da página acima e tentar o quiz novamente para fixar os conceitos.';
+      }
+    }
+
+    function reiniciarQuiz() {
+      quizIndiceAtual = 0;
+      quizPontuacao = 0;
+      document.getElementById('quiz-result').classList.add('quiz-hidden');
+      document.getElementById('quiz-card').classList.remove('quiz-hidden');
+      carregarPergunta();
+    }
+
+    // Inicialização
+    carregarPergunta();
+  </script>
+</body>
+</html>

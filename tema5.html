@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatística para Pesquisa - Estatística Descritiva Completa</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col">
+
+  <!-- TOPO (Cabeçalho original) -->
+  <header class="topo bg-[#1a1b35] text-white px-6 md:px-12 py-4 flex items-center justify-between shadow-md sticky top-0 z-50">
+    <a class="logo font-bold text-lg md:text-xl tracking-wide hover:text-indigo-300 transition-colors" href="index.html">
+      ESTATÍSTICA PARA PESQUISA
+    </a>
+    <nav class="flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
+      <a href="#quiz" class="hover:text-indigo-300 transition-colors">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-r from-[#3b3dbf] to-[#4f46e5] text-white py-14 px-6 text-center shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-[#5c5ee6]/80 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 border border-white/20">
+        ESTATÍSTICA DESCOMPLICADA
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        Tipos de Análise Estatística: Descritiva
+      </h1>
+      <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
+        Entenda como escolher o método de análise ideal com base no número de variáveis e no objetivo da sua pesquisa.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-10 w-full space-y-12">
+
+    <!-- 1. INTRODUÇÃO À ESTATÍSTICA DESCRITIVA -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+          <i data-lucide="book-open" class="w-6 h-6"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">1. O que é Estatística Descritiva?</h2>
+      </div>
+
+      <div class="space-y-4 text-slate-600 leading-relaxed text-base">
+        <p>
+          A <strong>Estatística Descritiva</strong> é um conjunto de técnicas utilizadas para organizar, resumir e apresentar um grupo de dados de forma simples e visual. O seu objetivo principal é facilitar a visualização das informações e ajudar o pesquisador a entender as características essenciais do seu estudo.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <h3 class="font-bold text-indigo-900 flex items-center gap-2">
+              <i data-lucide="search" class="w-5 h-5 text-indigo-600"></i>
+              Para que serve na prática?
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Serve para transformar um amontoado de números brutos em resumos claros. Com ela, é possível identificar padrões, verificar valores médios, avaliar se os dados estão agrupados ou espalhados e apresentar esses achados em tabelas e gráficos intuitivos.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <h3 class="font-bold text-indigo-900 flex items-center gap-2">
+              <i data-lucide="compass" class="w-5 h-5 text-indigo-600"></i>
+              Por que é chamada de Análise Exploratória?
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Porque é a primeira etapa de qualquer pesquisa. O pesquisador "explora" os dados coletados para conhecer a sua distribuição antes de decidir se precisará aplicar análises mais avançadas ou testes estatísticos complexos.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-amber-50 border border-amber-200/80 flex items-start space-x-3">
+          <i data-lucide="alert-circle" class="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5"></i>
+          <div>
+            <h4 class="font-bold text-amber-900 mb-1">Importante Lembrar:</h4>
+            <p class="text-sm text-amber-800 leading-relaxed">
+              Como essa área serve <strong>apenas para apresentar e descrever os dados</strong>, ela <strong>não faz comparações diretas de causa e efeito entre grupos</strong> nem realiza testes estatísticos de hipóteses. Ela mostra o que aconteceu na amostra estudada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MEDIDAS DE TENDÊNCIA CENTRAL -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-8">
+      <div class="flex items-center space-x-3">
+        <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+          <i data-lucide="calculator" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">2. Medidas de Tendência Central</h2>
+          <p class="text-slate-500 text-sm">Resumindo um conjunto de informações em um único valor representativo.</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Para que servem? As medidas de tendência central indicam onde se localiza o "centro" ou o valor mais típico de um conjunto de dados. Para calculá-las corretamente, o primeiro passo indispensável é organizar os dados em ordem crescente (do menor para o maior), formando o que chamamos de <strong>ROL</strong>.
+      </p>
+
+      <!-- Conceitos das 3 Medidas com Explicação das Fórmulas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Moda -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-slate-900 text-lg">Moda (Mo)</h3>
+              <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">Mais Frequente</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              <strong>O que é:</strong> É o valor que mais se repete em um conjunto de dados (o que aparece com maior frequência).
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs text-slate-700 mb-2">
+              <strong>Como encontrar:</strong><br>
+              Conta-se quantas vezes cada número aparece no conjunto. O valor com maior contagem é a moda. Se nenhum valor se repetir, o conjunto é <em>amodal</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Média -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-slate-900 text-lg">Média (x̄)</h3>
+              <span class="text-xs bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded-full">Ponto de Equilíbrio</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              <strong>O que é:</strong> É o ponto de equilíbrio dos dados. Mostra o valor que cada elemento teria se a soma total fosse dividida em partes exatamente iguais.
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs text-slate-700 mb-2">
+              <div class="font-bold text-center text-sm mb-2 text-indigo-900">Fórmula: Média = (Soma de todos os valores) ÷ n</div>
+              <div class="border-t border-slate-100 pt-2 text-[11px] text-slate-600 space-y-1">
+                <p><strong>O que é cada termo?</strong></p>
+                <p>• <strong>x̄ (x com barra):</strong> Símbolo usado para representar a Média.</p>
+                <p>• <strong>Soma de todos os valores:</strong> Adição de cada um dos números coletados.</p>
+                <p>• <strong>n:</strong> Quantidade total de elementos ou dados do estudo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mediana -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-slate-900 text-lg">Mediana (Md)</h3>
+              <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2 py-0.5 rounded-full">Divisor do Meio</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              <strong>O que é:</strong> É o valor que divide o conjunto de dados exatamente ao meio: 50% dos dados ficam abaixo dele e 50% acima.
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs text-slate-700 mb-2">
+              <strong>Como encontrar:</strong><br>
+              1. Coloque os dados em ordem crescente.<br>
+              2. Se a quantidade de dados (n) for <strong>ímpar</strong>: é o número do meio.<br>
+              3. Se for <strong>par</strong>: é a média dos dois números centrais.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EXEMPLO PRÁTICO COMPLETO EM TEMA CLARO (PESO DOS RECÉM-NASCIDOS) -->
+      <div class="bg-indigo-50/80 rounded-2xl p-6 border border-indigo-100 shadow-sm space-y-6">
+        <div>
+          <span class="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-100 border border-indigo-200 px-3 py-1 rounded-full">
+            Exemplo Prático Passo a Passo
+          </span>
+          <h3 class="text-xl font-bold text-indigo-950 mt-3">Peso ao Nascer de 10 Recém-Nascidos (em kg)</h3>
+          <p class="text-xs text-slate-600 mt-1">
+            Veja como calcular cada medida utilizando os dados reais extraídos da pesquisa.
+          </p>
+        </div>
+
+        <!-- Dados Brutos e ROL -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-white rounded-xl border border-indigo-100 shadow-xs space-y-1">
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Dados Brutos (Coletados):</span>
+            <div class="font-mono text-sm font-semibold text-slate-800">3.2 | 3.2 | 2.8 | 2.1 | 2.9 | 3.1 | 3.2 | 3.0 | 3.5 | 4.0</div>
+          </div>
+
+          <div class="p-4 bg-white rounded-xl border border-emerald-200 shadow-xs space-y-1">
+            <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block">1º Passo: Organizar em ROL (Ordem Crescente):</span>
+            <div class="font-mono text-sm font-bold text-emerald-600">2.1 | 2.8 | 2.9 | 3.0 | 3.1 | 3.2 | 3.2 | 3.2 | 3.5 | 4.0</div>
+          </div>
+        </div>
+
+        <!-- Demonstração Detalhada das 3 Medidas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <!-- Cálculo Moda -->
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-xs space-y-2">
+            <div class="text-xs font-bold text-emerald-700 uppercase">Cálculo da Moda (Mo)</div>
+            <div class="text-3xl font-extrabold text-emerald-600 font-mono">3,2 kg</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <strong>Explicação:</strong> Observando a lista em ROL, o valor <strong>3,2</strong> é o único que se repete <strong>3 vezes</strong>. Todos os outros aparecem apenas 1 vez. Por isso, a moda é 3,2 kg.
+            </p>
+          </div>
+
+          <!-- Cálculo Média -->
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-xs space-y-2">
+            <div class="text-xs font-bold text-blue-700 uppercase">Cálculo da Média (x̄)</div>
+            <div class="text-3xl font-extrabold text-blue-600 font-mono">3,10 kg</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <strong>Passo 1 (Soma):</strong><br>
+              2,1 + 2,8 + 2,9 + 3,0 + 3,1 + 3,2 + 3,2 + 3,2 + 3,5 + 4,0 = <strong>31,0 kg</strong><br>
+              <strong>Passo 2 (Divisão pelo total n=10):</strong><br>
+              31,0 ÷ 10 = <strong>3,10 kg</strong>.
+            </p>
+          </div>
+
+          <!-- Cálculo Mediana -->
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-xs space-y-2">
+            <div class="text-xs font-bold text-indigo-700 uppercase">Cálculo da Mediana (Md)</div>
+            <div class="text-3xl font-extrabold text-indigo-600 font-mono">3,15 kg</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <strong>Explicação:</strong> Como a quantidade de bebês é par (n = 10), pegamos os dois valores que estão bem no centro (o 5º e o 6º valor): <strong>3,1</strong> e <strong>3,2</strong>.<br>
+              Mediana = (3,1 + 3,2) ÷ 2 = <strong>3,15 kg</strong>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MEDIDAS DE DISPERSÃO -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-6">
+      <div class="flex items-center space-x-3">
+        <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+          <i data-lucide="activity" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">3. Medidas de Dispersão (Variabilidade)</h2>
+          <p class="text-slate-500 text-sm">Avaliando o quanto os dados variam ao redor do valor central.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-xl text-xs md:text-sm text-indigo-900 leading-relaxed">
+        <strong>Para que servem?</strong> As medidas de dispersão não representam um único valor do conjunto, mas sim o grau de variação ou "espalhamento" dos dados. Elas nos mostram se as informações estão bem agrupadas perto da média ou muito separadas.
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Amplitude de Variação -->
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-slate-900 text-base mb-2">1. Amplitude de Variação</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              É a diferença simples entre o maior e o menor valor do conjunto de dados.
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-center text-slate-800 mb-3">
+              Amplitude = Maior Valor - Menor Valor
+            </div>
+            <div class="p-3 bg-indigo-50/70 rounded text-xs text-indigo-900 border border-indigo-100">
+              <strong>Exemplo Prático:</strong> Em uma turma onde a menor altura é 1,54 m e a maior é 1,93 m:<br>
+              <span class="font-mono font-bold">Amplitude = 1,93 - 1,54 = 0,39 m</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coeficiente de Variação -->
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-slate-900 text-base mb-2">2. Coeficiente de Variação (CV)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Expressa a variabilidade em porcentagem. Quanto menor for esse porcentual, mais homogêneo (parecido) é o conjunto de dados.
+            </p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs text-slate-700 mb-3">
+              <div class="font-mono font-bold text-center text-indigo-900 mb-2">Fórmula: CV = (Desvio Padrão ÷ Média) × 100%</div>
+              <div class="border-t border-slate-100 pt-1.5 text-[11px] space-y-1">
+                <p>• <strong>Desvio Padrão (S):</strong> O grau de variação em unidades reais.</p>
+                <p>• <strong>Média (x̄):</strong> A média aritmética do grupo.</p>
+                <p>• <strong>100%:</strong> Fator para transformar o resultado em porcentagem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variância e Desvio Padrão (Caixa Completa com Fórmulas e Atributos Explicados) -->
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 md:col-span-2 space-y-4">
+          <div>
+            <h3 class="font-bold text-slate-900 text-base">3. Variância (S²) e Desvio Padrão (S)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-1">
+              A <strong>Variância (S²)</strong> mostra a média de quanto cada observação se afasta da média geral. Essas diferenças são elevadas ao quadrado por um motivo prático: evitar que valores positivos e negativos se anulem (o que faria a soma ser zero). Já o <strong>Desvio Padrão (S)</strong> é a raiz quadrada da variância, trazendo a medida de volta para a unidade original do estudo (ex: kg, metros).
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Fórmula da Variância -->
+            <div class="bg-white p-4 rounded-lg border border-slate-200 text-xs text-slate-700">
+              <div class="font-mono font-bold text-sm text-indigo-900 mb-2 text-center">Fórmula da Variância: S² = Σ(x - x̄)² ÷ (n - 1)</div>
+              <div class="border-t border-slate-100 pt-2 space-y-1 text-[11px]">
+                <p><strong>Entendendo cada símbolo da fórmula:</strong></p>
+                <p>• <strong>S²:</strong> Símbolo da Variância Amostral.</p>
+                <p>• <strong>Σ (Letra Grega Sigma):</strong> Significa "Somatório" (somar todos os resultados que vêm depois).</p>
+                <p>• <strong>x:</strong> Cada valor individual do seu conjunto de dados.</p>
+                <p>• <strong>x̄ (x com barra):</strong> A Média Aritmética de todos os dados.</p>
+                <p>• <strong>(x - x̄)²:</strong> O desvio de cada valor em relação à média, elevado ao quadrado.</p>
+                <p>• <strong>n - 1:</strong> O número total de dados menos 1 (usado para ajustar amostras de pesquisas).</p>
+              </div>
+            </div>
+
+            <!-- Fórmula do Desvio Padrão -->
+            <div class="bg-white p-4 rounded-lg border border-slate-200 text-xs text-slate-700">
+              <div class="font-mono font-bold text-sm text-indigo-900 mb-2 text-center">Fórmula do Desvio Padrão: S = √S²</div>
+              <div class="border-t border-slate-100 pt-2 space-y-1 text-[11px]">
+                <p><strong>Entendendo cada símbolo da fórmula:</strong></p>
+                <p>• <strong>S:</strong> Símbolo do Desvio Padrão Amostral.</p>
+                <p>• <strong>√ (Raiz Quadrada):</strong> Operação usada para cancelar o efeito do quadrado que foi applied na variância.</p>
+                <p>• <strong>S²:</strong> O valor resultante do cálculo da Variância.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. PERCENTIS E QUARTIS -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-6">
+      <div class="flex items-center space-x-3">
+        <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+          <i data-lucide="sliders" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">4. Percentis e Quartis</h2>
+          <p class="text-slate-500 text-sm">Dividindo os dados em partes percentuais ordenadas.</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-600 leading-relaxed">
+        <strong>Percentil:</strong> É um valor que delimita uma determinada porcentagem de dados abaixo ou acima dele. Os exemplos mais conhecidos e utilizados em pesquisas são os <strong>Quartis</strong>, que dividem todo o conjunto em 4 partes iguais de 25%:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="font-bold text-slate-900 text-sm mb-1">1º Quartil (Q1 ou Percentil 25)</div>
+          <p class="text-slate-600 leading-relaxed">Indica que <strong>25% dos valores</strong> estão abaixo dele e 75% estão acima.</p>
+        </div>
+
+        <div class="p-4 bg-indigo-50 rounded-xl border border-indigo-200">
+          <div class="font-bold text-indigo-950 text-sm mb-1">2º Quartil (Q2, Mediana ou Percentil 50)</div>
+          <p class="text-indigo-900 leading-relaxed">Divide a distribuição exatamente ao meio: <strong>50% abaixo</strong> e 50% acima.</p>
+        </div>
+
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="font-bold text-slate-900 text-sm mb-1">3º Quartil (Q3 ou Percentil 75)</div>
+          <p class="text-slate-600 leading-relaxed">Mostra que <strong>75% dos valores</strong> estão abaixo dele e 25% estão acima.</p>
+        </div>
+      </div>
+
+      <!-- Diagrama de Quartis e Faixa Central (Modelo Visual Fiel) -->
+      <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 overflow-x-auto">
+        <div class="min-w-[600px] py-2">
+          <!-- Rótulos Superiores -->
+          <div class="grid grid-cols-5 text-center text-xs md:text-sm font-bold text-slate-800 mb-3">
+            <div><span class="text-slate-500 font-normal text-[11px] block">Extremo:</span>Inferior</div>
+            <div class="text-indigo-700">1º Quartil (Q1)</div>
+            <div class="text-indigo-900 font-extrabold">Mediana (Q2)</div>
+            <div class="text-indigo-700">3º Quartil (Q3)</div>
+            <div><span class="text-slate-500 font-normal text-[11px] block">Extremo:</span>Superior</div>
+          </div>
+
+          <!-- Eixo Gráfico com Marcadores Verticais -->
+          <div class="relative my-4 flex items-center justify-between">
+            <div class="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-indigo-300 w-full z-0"></div>
+            
+            <div class="relative z-10 w-3 h-6 bg-slate-600"></div>
+            <div class="relative z-10 w-3 h-7 bg-indigo-600"></div>
+            <div class="relative z-10 w-3.5 h-9 bg-indigo-900"></div>
+            <div class="relative z-10 w-3 h-7 bg-indigo-600"></div>
+            <div class="relative z-10 w-3 h-6 bg-slate-600"></div>
+          </div>
+
+          <!-- Intervalos de 25% -->
+          <div class="grid grid-cols-4 text-center font-bold text-xs text-indigo-800 mb-6">
+            <div>25%</div>
+            <div>25%</div>
+            <div>25%</div>
+            <div>25%</div>
+          </div>
+
+          <!-- Destaque da Faixa Central (50%) -->
+          <div class="max-w-[50%] mx-auto relative border-t-2 border-indigo-600 pt-2 text-center">
+            <div class="absolute -top-1.5 left-0 w-2.5 h-2.5 border-l-2 border-t-2 border-indigo-600 -rotate-45"></div>
+            <div class="absolute -top-1.5 right-0 w-2.5 h-2.5 border-r-2 border-t-2 border-indigo-600 rotate-45"></div>
+            <span class="text-xs md:text-sm font-extrabold text-indigo-900 uppercase tracking-wide block">
+              50% - Faixa Central
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FREQUÊNCIA SIMPLES (n) E PERCENTUAL (%) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-6">
+      <div class="flex items-center space-x-3">
+        <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+          <i data-lucide="pie-chart" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">5. Frequência Simples (n) e Percentual (%)</h2>
+          <p class="text-slate-500 text-sm">A contagem exata e o peso de cada categoria.</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Esses dois termos referem-se aos cálculos de frequência muito utilizados em tabelas e gráficos:<br>
+        • <strong>n (Frequência Simples ou Absoluta):</strong> Representa a quantidade exata de vezes que uma característica aparece no estudo.<br>
+        • <strong>% (Frequência Relativa ou Percentual):</strong> Mostra a proporção desse "n" em relação ao total de elementos analisados.
+      </p>
+
+      <!-- Exemplo Higiene Bucal -->
+      <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4">
+        <h3 class="font-bold text-slate-800 text-base">Exemplo da Pesquisa: Frequência com que adultos recebem informações sobre higiene bucal</h3>
+
+        <div class="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-xs">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-xs">
+              <tr>
+                <th class="py-3 px-4 border-b">Resposta</th>
+                <th class="py-3 px-4 border-b text-center">Frequência Simples (n)</th>
+                <th class="py-3 px-4 border-b text-center">Percentual (%)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700 font-medium text-xs md:text-sm">
+              <tr>
+                <td class="py-3 px-4 font-bold text-slate-800">Sempre / Frequentemente</td>
+                <td class="py-3 px-4 text-center font-mono font-bold text-slate-900">332</td>
+                <td class="py-3 px-4 text-center font-mono font-bold text-indigo-600">42,4%</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-slate-800">Ocasionalmente</td>
+                <td class="py-3 px-4 text-center font-mono font-bold text-slate-900">209</td>
+                <td class="py-3 px-4 text-center font-mono font-bold text-indigo-600">26,2%</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-slate-800">Raramente / Nunca</td>
+                <td class="py-3 px-4 text-center font-mono font-bold text-slate-900">237</td>
+                <td class="py-3 px-4 text-center font-mono font-bold text-indigo-600">31,4%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="p-4 bg-indigo-50/70 border border-indigo-100 rounded-lg text-xs text-indigo-900 leading-relaxed">
+          <strong>O que isso significa de forma simples?</strong> O <strong>n</strong> mostra a contagem exata de pessoas. Nesse exemplo, exatamente 332 indivíduos responderam que recebem essas informações "sempre ou frequentemente". O <strong>percentual (%)</strong> mostra que essas 332 pessoas equivalem a 42,4% de todos os adultos pesquisados. Dessa forma, o <em>n</em> nos dá o tamanho real do grupo, enquanto o <em>percentual</em> ajuda a visualizar o peso desse grupo em relação ao todo.
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. GRÁFICOS -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-8">
+      <div class="flex items-center space-x-3">
+        <div class="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
+          <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">6. Gráficos em Estatística Descritiva</h2>
+          <p class="text-slate-500 text-sm">Representações visuais claras de dados quantitativos e categóricos.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Gráfico de Pizza -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-slate-800 mb-1">Gráfico de Pizza (Setor)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed my-2">
+              Também conhecido como gráfico de setor, é indicado para representar variáveis categóricas. Permite mostrar os dados de apenas uma variável em um momento específico, utilizando frequências simples, relativas ou ambas.
+            </p>
+          </div>
+          <div class="h-56 relative flex items-center justify-center my-2">
+            <canvas id="chartPie"></canvas>
+          </div>
+        </div>
+
+        <!-- Gráfico de Barras -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-slate-800 mb-1">Gráfico de Barras</h3>
+            <p class="text-xs text-slate-600 leading-relaxed my-2">
+              Oferece mais opções para variáveis categóricas do que o gráfico de pizza. As barras podem ser verticais ou horizontais, com largura igual e espaçadas entre si. A altura de cada barra é proporcional ao valor de <em>n</em> (número de casos).
+            </p>
+          </div>
+          <div class="h-56 relative my-2">
+            <canvas id="chartBar"></canvas>
+          </div>
+        </div>
+
+        <!-- Histograma -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-slate-800 mb-1">Histograma</h3>
+            <p class="text-xs text-slate-600 leading-relaxed my-2">
+              Utilizado para representar variáveis numéricas. Suas barras ficam <strong>justapostas (coladas lado a lado sem espaços)</strong> e são divididas em categorias de mesmo tamanho chamadas <em>classes</em>.
+            </p>
+          </div>
+          <div class="h-56 relative my-2">
+            <canvas id="chartHistogram"></canvas>
+          </div>
+        </div>
+
+        <!-- Polígono de Frequências -->
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-slate-800 mb-1">Polígono de Frequências</h3>
+            <p class="text-xs text-slate-600 leading-relaxed my-2">
+              Consiste em unir, através de segmentos de reta, as ordenadas correspondentes aos pontos médios das classes no topo de um histograma.
+            </p>
+          </div>
+          <div class="h-56 relative my-2">
+            <canvas id="chartPolygon"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOXPLOT E OUTLIERS -->
+      <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 mt-8 space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900">Boxplot e Outliers</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mt-1">
+            O <strong>Boxplot</strong> é o gráfico mais completo e informativo sobre a distribuição de uma variável. Ele representa em um único desenho os quartis (Q1, Q2 e Q3), os limites máximo e mínimo e ainda destaca os <strong>Outliers</strong>.
+          </p>
+        </div>
+
+        <!-- Desenho do Boxplot -->
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
+          <div class="relative flex items-center justify-between h-32 max-w-xl mx-auto px-6">
+            <div class="absolute left-10 right-16 top-1/2 -translate-y-1/2 h-0.5 bg-slate-400 z-0"></div>
+
+            <div class="z-10 w-0.5 h-10 bg-slate-700 relative">
+              <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-slate-700">Mínimo</span>
+            </div>
+
+            <div class="z-10 flex-1 mx-6 h-16 bg-indigo-100 border-2 border-indigo-600 rounded-xs relative flex items-center justify-center">
+              <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-indigo-800"></div>
+              <span class="absolute top-1 left-2 text-[10px] font-bold text-indigo-900">Q1</span>
+              <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[11px] font-extrabold text-indigo-900">Mediana (Q2)</span>
+              <span class="absolute top-1 right-2 text-[10px] font-bold text-indigo-900">Q3</span>
+            </div>
+
+            <div class="z-10 w-0.5 h-10 bg-slate-700 relative">
+              <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[11px] font-bold text-slate-700">Máximo</span>
+            </div>
+
+            <div class="z-10 w-3 h-3 rounded-full bg-red-500 border-2 border-white shadow-sm ml-6 relative">
+              <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-extrabold text-red-600 uppercase">Outlier</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explicação dos Outliers -->
+        <div class="p-5 bg-amber-50/90 border border-amber-200 rounded-xl space-y-3">
+          <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600"></i>
+            O que são Outliers e por que eles ocorrem?
+          </h4>
+          <p class="text-xs text-amber-800 leading-relaxed">
+            Os <strong>Outliers</strong> são observações atípicas, ou seja, apresentam valores muito maiores ou muito menores em comparação ao restante dos dados. Eles podem surgir por diferentes motivos:
+          </p>
+          <ul class="text-xs text-amber-900 space-y-1.5 list-disc list-inside">
+            <li>Erros na leitura, na anotação ou na digitação das informações no computador.</li>
+            <li>Falhas de calibração do equipamento durante a realização do experimento ou medição.</li>
+            <li>Mudanças imprevistas no paciente ou participante que não puderam ser controladas.</li>
+            <li>Características atípicas reais que pertencem à própria natureza da variável estudada.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO QUIZ DE FIXAÇÃO INTERATIVO (10 PERGUNTAS COMPLETAS) -->
+    <section id="quiz" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6 scroll-mt-20">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="bg-indigo-100 text-indigo-800 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-wider">
+            Avaliação de Conhecimento
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">
+            Quiz Interativo de Estatística Descritiva
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            Responda às 10 questões e receba o feedback detalhado a cada etapa.
+          </p>
+        </div>
+        <!-- Barra de Progresso -->
+        <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 text-center min-w-[150px]">
+          <span id="quiz-progress-text" class="text-xs font-bold text-indigo-900 block mb-1">Pergunta 1 de 10</span>
+          <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+            <div id="quiz-progress-bar" class="bg-indigo-600 h-full w-[10%] transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD DA PERGUNTA ATUAL -->
+      <div id="quiz-card" class="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-6">
+        <h3 id="quiz-question" class="font-bold text-slate-900 text-lg">
+          <!-- Texto da Pergunta -->
+        </h3>
+
+        <!-- Opções -->
+        <div id="quiz-options" class="space-y-3">
+          <!-- Opções inseridas via JS -->
+        </div>
+
+        <!-- Feedback Container (Escondido inicialmente) -->
+        <div id="quiz-feedback" class="hidden p-4 rounded-xl border text-sm leading-relaxed space-y-2 transition-all">
+          <div id="quiz-feedback-title" class="font-bold text-base flex items-center gap-2"></div>
+          <p id="quiz-feedback-text" class="text-slate-700"></p>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="flex items-center justify-between pt-2">
+          <button id="btn-confirmar" onclick="confirmarResposta()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-all shadow active:scale-95">
+            Confirmar Resposta
+          </button>
+          <button id="btn-proxima" onclick="proximaPergunta()" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-all shadow active:scale-95">
+            Próxima Pergunta ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD FINAL DE RESULTADOS (Escondido inicialmente) -->
+      <div id="quiz-result" class="hidden text-center py-8 px-4 space-y-6 bg-slate-50 rounded-xl border border-slate-200">
+        <div class="w-20 h-20 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto text-3xl font-extrabold shadow-inner">
+          🏆
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">Quiz Concluído!</h3>
+          <p id="result-score-text" class="text-lg text-slate-700 mt-2">
+            Você acertou X de 10 perguntas.
+          </p>
+          <p id="result-message" class="text-sm text-slate-500 mt-1">
+            <!-- Mensagem personalizada -->
+          </p>
+        </div>
+        <button onclick="reiniciarQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl text-sm transition-all shadow">
+          🔄 Tentar Novamente
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ (FOOTER) -->
+  <footer class="bg-[#1a1b35] text-slate-300 py-6 text-center text-sm font-medium border-t border-slate-800 mt-auto">
+    Estatística Aplicada • Guia Prático e Didático
+  </footer>
+
+  <!-- SCRIPT DE INICIALIZAÇÃO DE GRÁFICOS E LÓGICA DO QUIZ (10 PERGUNTAS) -->
+  <script>
+    // Inicializar ícones Lucide
+    lucide.createIcons();
+
+    // Configuração dos Gráficos com Chart.js
+    const commonPlugins = { legend: { display: false } };
+
+    // 1. Pizza (Higiene Bucal)
+    new Chart(document.getElementById('chartPie'), {
+      type: 'pie',
+      data: {
+        labels: ['Sempre/Frequentemente', 'Ocasionalmente', 'Raramente/Nunca'],
+        datasets: [{
+          data: [332, 209, 237],
+          backgroundColor: ['#4f46e5', '#60a5fa', '#f59e0b']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } }
+      }
+    });
+
+    // 2. Barras (Higiene Bucal)
+    new Chart(document.getElementById('chartBar'), {
+      type: 'bar',
+      data: {
+        labels: ['Sempre/Freq.', 'Ocasionalmente', 'Raramente/Nunca'],
+        datasets: [{
+          data: [332, 209, 237],
+          backgroundColor: ['#4f46e5', '#60a5fa', '#f59e0b'],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: commonPlugins,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    // 3. Histograma (Justaposto sem espaços entre barras)
+    new Chart(document.getElementById('chartHistogram'), {
+      type: 'bar',
+      data: {
+        labels: ['2,0 - 2,5', '2,5 - 3,0', '3,0 - 3,5', '3,5 - 4,0'],
+        datasets: [{
+          label: 'Frequência de Bebês',
+          data: [1, 2, 5, 2],
+          backgroundColor: '#6366f1',
+          categoryPercentage: 1.0,
+          barPercentage: 1.0,
+          borderWidth: 1,
+          borderColor: '#ffffff'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: commonPlugins,
+        scales: {
+          x: { title: { display: true, text: 'Classes de Peso (kg)', font: { size: 11 } } },
+          y: { beginAtZero: true, ticks: { stepSize: 1 } }
+        }
+      }
+    });
+
+    // 4. Polígono de Frequências
+    new Chart(document.getElementById('chartPolygon'), {
+      type: 'line',
+      data: {
+        labels: ['2,25 kg', '2,75 kg', '3,25 kg', '3,75 kg'],
+        datasets: [{
+          label: 'Frequência',
+          data: [1, 2, 5, 2],
+          borderColor: '#4f46e5',
+          backgroundColor: 'rgba(79, 70, 229, 0.15)',
+          fill: true,
+          tension: 0.2,
+          pointRadius: 5,
+          pointBackgroundColor: '#4f46e5'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: commonPlugins,
+        scales: {
+          x: { title: { display: true, text: 'Pontos Médios das Classes', font: { size: 11 } } },
+          y: { beginAtZero: true, ticks: { stepSize: 1 } }
+        }
+      }
+    });
+
+    // ESTRUTURA E LÓGICA DO QUIZ DO TEMA 5 (10 PERGUNTAS)
+    const perguntasQuiz = [
+      {
+        pergunta: "1. Qual é a finalidade principal da Estatística Descritiva em uma pesquisa científica?",
+        opcoes: [
+          { id: "A", texto: "Realizar testes de hipóteses e demonstrar relações formais de causa e efeito entre grupos." },
+          { id: "B", texto: "Organizar, resumir e apresentar os dados de forma simples em tabelas e gráficos." },
+          { id: "C", texto: "Extrapolar os resultados da amostra para populações globais sem necessidade de sorteio." },
+          { id: "D", texto: "Calcular exclusivamente probabilidades de eventos futuros." }
+        ],
+        correta: "B",
+        explicacao: "A Estatística Descritiva busca resumir e apresentar as características dos dados coletados em tabelas e gráficos, sem fazer inferências ou testes de hipóteses de causa e efeito."
+      },
+      {
+        pergunta: "2. Qual é o primeiro passo obrigatório para calcular corretamente a Mediana de um conjunto de dados?",
+        opcoes: [
+          { id: "A", texto: "Somar todos os valores e dividir pelo total n de elementos." },
+          { id: "B", texto: "Organizar os dados em ordem crescente ou decrescente, formando o ROL." },
+          { id: "C", texto: "Encontrar o valor de maior frequência no grupo." },
+          { id: "D", texto: "Calcular a raiz quadrada da variância amostral." }
+        ],
+        correta: "B",
+        explicacao: "Para localizar o valor central (mediana), os dados devem obrigatoriamente estar dispostos em ordem crescente ou decrescente (o ROL)."
+      },
+      {
+        pergunta: "3. No exemplo prático com o peso de 10 bebês, qual valor representou a Moda da amostra e por quê?",
+        opcoes: [
+          { id: "A", texto: "3,10 kg, pois foi o ponto de equilíbrio de todos os pesos divididos por 10." },
+          { id: "B", texto: "3,15 kg, por ser a média entre os dois valores centrais." },
+          { id: "C", texto: "3,2 kg, pois foi o único peso que se repetiu 3 vezes na amostra." },
+          { id: "D", texto: "4,0 kg, por ser o maior peso observado na coleta." }
+        ],
+        correta: "C",
+        explicacao: "A moda é o valor mais frequente. Na amostra de 10 bebês, o peso de 3,2 kg apareceu 3 vezes, enquanto os demais apareceram apenas 1 vez."
+      },
+      {
+        pergunta: "4. Qual é a principal diferença de aplicação entre a Variância (S²) e o Desvio Padrão (S)?",
+        opcoes: [
+          { id: "A", texto: "A variância é dada em unidades ao quadrado, enquanto o desvio padrão retorna à unidade de medida original." },
+          { id: "B", texto: "O desvio padrão só é aplicado em amostras ímpares, enquanto a variância em amostras pares." },
+          { id: "C", texto: "A variância mede frequências simples, e o desvio padrão calcula percentuais relativos." },
+          { id: "D", texto: "Não há diferença estatística entre as duas medidas." }
+        ],
+        correta: "A",
+        explicacao: "A variância eleva os desvios ao quadrado para evitar cancelamento de sinais. O desvio padrão aplica a raiz quadrada na variância, trazendo a medida de volta à unidade original (ex: kg, metros)."
+      },
+      {
+        pergunta: "5. Em um grupo de alunos, a menor altura é 1,54 m e a maior é 1,93 m. Qual é a Amplitude de Variação desta amostra?",
+        opcoes: [
+          { id: "A", texto: "1,73 m" },
+          { id: "B", texto: "0,39 m" },
+          { id: "C", texto: "3,47 m" },
+          { id: "D", texto: "0,50 m" }
+        ],
+        correta: "B",
+        explicacao: "A Amplitude de Variação é a diferença entre o maior e o menor valor: 1,93 m - 1,54 m = 0,39 m."
+      },
+      {
+        pergunta: "6. O que indica o 1º Quartil (Q1 ou Percentil 25) em uma distribuição de dados?",
+        opcoes: [
+          { id: "A", texto: "Que 50% dos dados estão abaixo dele e 50% estão acima." },
+          { id: "B", texto: "Que 75% dos valores estão abaixo dele." },
+          { id: "C", texto: "Que exatamente 25% dos valores estão abaixo dele e 75% estão acima." },
+          { id: "D", texto: "Que o conjunto possui um desvio padrão de 25%." }
+        ],
+        correta: "C",
+        explicacao: "O 1º Quartil (Q1) é o limite percentual correspondente ao Percentil 25, separando os 25% menores valores dos 75% maiores."
+      },
+      {
+        pergunta: "7. Em uma pesquisa com 778 adultos sobre higiene bucal, 332 responderam que recebem orientações frequentemente. O que representa o número 332 e a taxa de 42,4%?",
+        opcoes: [
+          { id: "A", texto: "332 é a Frequência Relativa (%) e 42,4% é a Frequência Simples (n)." },
+          { id: "B", texto: "332 é a Frequência Simples (n) e 42,4% é a Frequência Percentual (%)." },
+          { id: "C", texto: "332 é o Desvio Padrão e 42,4% é a Mediana." },
+          { id: "D", texto: "Ambos representam o valor absoluto de amostras amodais." }
+        ],
+        correta: "B",
+        explicacao: "O valor n=332 é a contagem exata de pessoas (Frequência Simples ou Absoluta), enquanto 42,4% é o peso proporcional dessa contagem no grupo total (Frequência Relativa ou Percentual)."
+      },
+      {
+        pergunta: "8. Qual é a característica visual que diferencia um Histograma de um Gráfico de Barras convencional?",
+        opcoes: [
+          { id: "A", texto: "O histograma possui barras espaçadas e o de barras possui linhas continuas." },
+          { id: "B", texto: "No histograma as barras são justapostas (coladas sem espaço entre si), pois representa classes numéricas contínuas." },
+          { id: "C", texto: "O gráfico de barras só pode ser desenhado no formato circular." },
+          { id: "D", texto: "Não há diferença visual entre eles." }
+        ],
+        correta: "B",
+        explicacao: "Em um Histograma as barras ficam encostadas umas nas outras (justapostas) para representar intervalos contínuos de classes de variáveis numéricas."
+      },
+      {
+        pergunta: "9. Qual gráfico estatístico permite visualizar simultaneamente a Mediana, os Quartis (Q1 e Q3), Extremos e os Outliers?",
+        opcoes: [
+          { id: "A", texto: "Gráfico de Pizza" },
+          { id: "B", texto: "Polígono de Frequências" },
+          { id: "C", texto: "Boxplot" },
+          { id: "D", texto: "Gráfico de Linha Simples" }
+        ],
+        correta: "C",
+        explicacao: "O Boxplot (gráfico de caixas) é a representação visual que apresenta o resumo dos cinco números (mínimo, Q1, mediana, Q3, máximo) e destaca valores discrepantes (outliers)."
+      },
+      {
+        pergunta: "10. O que são Outliers em uma análise estatística e qual fator pode provocar o seu surgimento?",
+        opcoes: [
+          { id: "A", texto: "São as médias centrais da amostra geradas por sorteios aleatórios." },
+          { id: "B", texto: "São valores atípicos (muito maiores ou menores) que podem ocorrer por erros de digitação ou falhas de calibração." },
+          { id: "C", texto: "São frequências percentuais que somam mais de 100%." },
+          { id: "D", texto: "São pontos médios de uma curva de distribuição perfeitamente simétrica." }
+        ],
+        correta: "B",
+        explicacao: "Outliers são pontos atípicos distantes do corpo principal dos dados. Podem surgir por falhas em equipamentos, erros de digitação ou variações biológicas extremas reais."
+      }
+    ];
+
+    let quizIndiceAtual = 0;
+    let quizPontuacao = 0;
+    let opcaoSelecionada = null;
+
+    function carregarPergunta() {
+      const q = perguntasQuiz[quizIndiceAtual];
+      opcaoSelecionada = null;
+
+      // Progresso
+      document.getElementById('quiz-progress-text').textContent = `Pergunta ${quizIndiceAtual + 1} de ${perguntasQuiz.length}`;
+      document.getElementById('quiz-progress-bar').style.width = `${((quizIndiceAtual + 1) / perguntasQuiz.length) * 100}%`;
+
+      // Texto da pergunta
+      document.getElementById('quiz-question').textContent = q.pergunta;
+
+      // Renderizar Opções
+      const containerOpcoes = document.getElementById('quiz-options');
+      containerOpcoes.innerHTML = '';
+
+      q.opcoes.forEach(opt => {
+        const div = document.createElement('label');
+        div.className = 'quiz-opcao flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/50 hover:border-indigo-200 cursor-pointer transition-all';
+        div.innerHTML = `
+          <input type="radio" name="opcao-quiz" value="${opt.id}" onchange="selecionarOpcao('${opt.id}')" class="accent-indigo-600 w-4 h-4">
+          <span class="text-slate-700 text-sm font-medium"><strong class="text-indigo-900">${opt.id})</strong> ${opt.texto}</span>
+        `;
+        containerOpcoes.appendChild(div);
+      });
+
+      // Reset de visibilidade
+      document.getElementById('quiz-feedback').classList.add('hidden');
+      document.getElementById('btn-confirmar').classList.remove('hidden');
+      document.getElementById('btn-proxima').classList.add('hidden');
+    }
+
+    function selecionarOpcao(id) {
+      opcaoSelecionada = id;
+    }
+
+    function confirmarResposta() {
+      if (!opcaoSelecionada) {
+        alert('Por favor, selecione uma opção antes de confirmar!');
+        return;
+      }
+
+      const q = perguntasQuiz[quizIndiceAtual];
+      const feedbackContainer = document.getElementById('quiz-feedback');
+      const feedbackTitle = document.getElementById('quiz-feedback-title');
+      const feedbackText = document.getElementById('quiz-feedback-text');
+
+      const inputs = document.querySelectorAll('input[name="opcao-quiz"]');
+      inputs.forEach(input => input.disabled = true);
+
+      if (opcaoSelecionada === q.correta) {
+        quizPontuacao++;
+        feedbackContainer.className = 'p-4 rounded-xl border text-sm leading-relaxed space-y-1 bg-emerald-50 border-emerald-200 text-emerald-900';
+        feedbackTitle.innerHTML = '✅ Resposta Correta!';
+      } else {
+        feedbackContainer.className = 'p-4 rounded-xl border text-sm leading-relaxed space-y-1 bg-rose-50 border-rose-200 text-rose-900';
+        feedbackTitle.innerHTML = `❌ Resposta Incorreta (A resposta certa é a opção ${q.correta})`;
+      }
+
+      feedbackText.textContent = q.explicacao;
+      feedbackContainer.classList.remove('hidden');
+
+      document.getElementById('btn-confirmar').classList.add('hidden');
+      document.getElementById('btn-proxima').classList.remove('hidden');
+    }
+
+    function proximaPergunta() {
+      quizIndiceAtual++;
+      if (quizIndiceAtual < perguntasQuiz.length) {
+        carregarPergunta();
+      } else {
+        exibirResultadoFinal();
+      }
+    }
+
+    function exibirResultadoFinal() {
+      document.getElementById('quiz-card').classList.add('hidden');
+      const resultCard = document.getElementById('quiz-result');
+      resultCard.classList.remove('hidden');
+
+      document.getElementById('result-score-text').textContent = `Você acertou ${quizPontuacao} de ${perguntasQuiz.length} perguntas! (${(quizPontuacao / perguntasQuiz.length) * 100}%)`;
+
+      const msgEl = document.getElementById('result-message');
+      if (quizPontuacao >= 9) {
+        msgEl.textContent = 'Excelente! Você demonstrou domínio completo sobre os conceitos de Estatística Descritiva, medidas e gráficos.';
+      } else if (quizPontuacao >= 6) {
+        msgEl.textContent = 'Muito bem! Você compreendeu a maioria das medidas centrais, de dispersão e interpretações de gráficos.';
+      } else {
+        msgEl.textContent = 'Vale a pena revisar as fórmulas e os exemplos práticos acima e tentar o quiz novamente para consolidar o aprendizado.';
+      }
+    }
+
+    function reiniciarQuiz() {
+      quizIndiceAtual = 0;
+      quizPontuacao = 0;
+      document.getElementById('quiz-result').classList.add('hidden');
+      document.getElementById('quiz-card').classList.remove('hidden');
+      carregarPergunta();
+    }
+
+    // Inicialização do Quiz
+    carregarPergunta();
+  </script>
+</body>
+</html>
