@@ -649,19 +649,19 @@
         <div class="card">
           <div class="card-icon">👥</div>
           <h3>População</h3>
-          <p>Representa a <strong>totalidade de um grupo</strong> que possui a característica pesquisada. Não se limita a "todas as pessoas do planeta", mas sim ao grupo específico da sua pesquisa (ex: todos os idosos de São Paulo ou todas as lâmpadas produzidas num dia por uma fábrica).</p>
+          <p> é o conjunto de todos os elementos, indivíduos ou objetos que possuem uma característica em comum e que são o foco de uma pesquisa ou estudo estatístico.</p>
         </div>
 
         <div class="card">
           <div class="card-icon">🧪</div>
           <h3>Amostra</h3>
-          <p>É a <strong>fração reduzida</strong> da população consultada na prática. Como pesquisar a população inteira (Censo) é caro, demorado e exige muitos recursos, usa-se a amostra para viabilizar o estudo em tempo e custo.</p>
+          <p>É a fração reduzida da população consultada na prática. Como pesquisar a população inteira (Censo) é caro, demorado e exige muitos recursos, usa-se a amostra para viabilizar o estudo em tempo e custo.</p>
         </div>
 
         <div class="card">
           <div class="card-icon">🎯</div>
           <h3>Representatividade</h3>
-          <p>É a condição que <strong>valida a amostra</strong>. Para projetar resultados na população inteira, a amostra precisa ter um número suficiente de elementos (<em>n</em>) e reproduzir a diversidade e proporção real do grupo de origem.</p>
+          <p>É a condição que valida a amostra. Para projetar resultados na população inteira, a amostra precisa ter um número suficiente de elementos (<em>n</em>) e reproduzir a diversidade e proporção real do grupo de origem.</p>
         </div>
 
       </div>
@@ -676,7 +676,7 @@
           <p><strong>População-alvo (<em>N</em>):</strong> Os 12.000 estudantes de graduação de uma universidade. Cada estudante é uma unidade amostral, e o objetivo é descobrir o parâmetro populacional: a proporção de alunos satisfeitos com a biblioteca. Em outras palavras, o valor real que só conheceríamos perguntando a todos.</p>
           <p><strong>Amostra (<em>n</em>):</strong> Entrevistar os 12.000 alunos (Censo) seria caro e demorado. Por isso, calcula-se o tamanho da amostra: <em>n</em> = 373 estudantes, considerando margem de erro de 5% e nível de confiança de 95%.</p>
           <p><strong>Representatividade:</strong> É a garantia de que os 373 entrevistados reproduzem a composição dos 12.000 (mesma proporção de cursos, períodos e turnos). Se fossem entrevistados apenas os alunos que estão na biblioteca, haveria viés de seleção: a amostra deixaria de fora quem não frequenta o local e distorceria o resultado.</p>
-          <p><strong>Inferência estatística:</strong> Se 78% dos 373 entrevistados se dizem satisfeitos (estimativa amostral), conclui-se que o valor real na população está entre 73% e 83%, aplicando a margem de erro de 5%.</p>
+          <p><strong>Inferência estatística:</strong> Se 78% dos 373 entrevistados se dizem satisfeitos (estimativa pontual com base na amostra), calcula-se um intervalo de confiança (comumente de 95%) que contenha o verdadeiro parametro populacioal. No exemplo: IC-95% de 73% a 83%.</p>
         </div>
       </div>
     </section>
@@ -705,9 +705,9 @@
           <div class="detail-number">2</div>
           <div class="detail-content">
             <h3>Margem de Erro (<em>e</em>)</h3>
-            <p>O "desconto" ou tolerância de imprecisão do resultado.</p>
+            <p>Quanto de afastamento entre o parâmetro populacional de interesse (desconhecido) e a estimativa a ser obtida na amostra o pesquisador tolera.</p>
             <div class="info-box">
-              <p><strong>Como funciona:</strong> Se a pesquisa aponta que 60% das pessoas são sedentárias com uma margem de erro de 5%, significa que o valor real na população está entre 55% e 65%.</p>
+              <p><strong>Como funciona:</strong> Se é estabelecido um erro de 2% (ε=0,02) para a estimação de uma prevalência que acredita-se ser de 30%, então estar-se-ia satisfeito com qualquer valor entre 28% e 32% para a estimativa.</p>
               <p><strong>Regra prática:</strong> O padrão mais usado no meio científico é 5%. Se você quiser uma margem menor (ex: 2%), a pesquisa fica mais precisa, porém exige entrevistar muito mais gente.</p>
             </div>
           </div>
@@ -718,10 +718,10 @@
           <div class="detail-number">3</div>
           <div class="detail-content">
             <h3>Nível de Confiança (<em>Z</em> ou <em>S</em>)</h3>
-            <p>A certeza e probabilidade de a pesquisa ter capturado a realidade.</p>
+            <p>Probabilidade de que a estimativa a ser obtida pela amostra esteja além do limite tolerável de ± ε (erro tolerável) <strong> ou </strong> é uma faixa de valores calculada a partir dos dados da amostra, que indica onde provavelmente se encontra o verdadeiro valor da população, considerando determinado nível de confiança.</p>
             <div class="info-box">
-              <p><strong>Como funciona:</strong> O padrão mais adotado é 95%. Isso significa que, se você repetisse a mesma pesquisa 100 vezes (usando amostras diferentes), em 95 delas o resultado real estaria dentro da margem de erro.</p>
-              <p><strong>Regra prática:</strong> Quanto maior a confiança esperada (ex: 99%), mais exigente é o teste e maior precisará ser o tamanho da sua amostra.</p>
+              <p><strong>Como funciona:</strong> O padrão mais adotado é 95%. Isso significa que, se você repetisse a mesma pesquisa em 100 amostras diferentes do mesmo tamanho, em 95 delas o resultado real estaria dentro da margem de erro.</p>
+              <p><strong>Regra prática:</strong> Quanto maior o nível de confiança, maior tende a ser o intervalo de confiança considerando o mesmo tamanho amostral.</p>
             </div>
           </div>
         </article>
