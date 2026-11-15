@@ -160,30 +160,84 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 4: CRITÉRIO DE DECISÃO (P-VALOR) -->
-    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
-      <div class="flex items-center space-x-3 mb-6">
+    <!-- SEÇÃO 4: VALOR DE P (P-VALOR) REVISADA -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-6">
+      <div class="flex items-center space-x-3 mb-2">
         <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
           <i data-lucide="scale"></i>
         </div>
-        <h2 class="text-2xl font-bold text-slate-900">4. Tomando Decisões Imparciais (O Valor p)</h2>
+        <h2 class="text-2xl font-bold text-slate-900">4. Valor de p (p-valor)</h2>
       </div>
 
-      <p class="text-slate-600 leading-relaxed mb-6">
-        Para tomar uma decisão sem ser tendencioso, o pesquisador calcula um valor numérico através do teste estatístico. Esse valor mede a distância entre o que foi <strong>observado na amostra</strong> e o que seria <strong>esperado se a H₀ fosse verdadeira</strong>.
-      </p>
+      <!-- O QUE É? -->
+      <div class="space-y-2">
+        <h3 class="text-lg font-bold text-slate-800">O que é?</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm leading-relaxed">
+          <li>É uma medida estatística utilizada nos testes de hipóteses.</li>
+          <li>Indica a probabilidade de obter um resultado igual ou mais extremo que o observado, supondo que a hipótese nula (H₀) seja verdadeira.</li>
+          <li>Ajuda a avaliar se os resultados são estatisticamente significativos.</li>
+        </ul>
+      </div>
 
-      <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-100 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="space-y-2">
-          <h3 class="font-bold text-indigo-950 text-lg">O famoso Valor p (p-value)</h3>
-          <p class="text-slate-600 text-sm max-w-xl">
-            É a probabilidade de referência usada para decidir se rejeitamos ou não a H₀. Quanto menor o p-valor, menor é a chance do resultado ter sido mera coincidência!
-          </p>
+      <!-- COMO INTERPRETAR? -->
+      <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+        <h3 class="text-lg font-bold text-slate-800">Como interpretar?</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex items-start space-x-2">
+            <span class="font-bold text-indigo-700 bg-indigo-100 px-2.5 py-0.5 rounded text-xs shrink-0 mt-0.5">p ≤ 0,05</span>
+            <span>resultado estatisticamente significativo. Há evidências para rejeitar H₀.</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <span class="font-bold text-slate-700 bg-slate-200 px-2.5 py-0.5 rounded text-xs shrink-0 mt-0.5">p &gt; 0,05</span>
+            <span>resultado não significativo. Não há evidências suficientes para rejeitar H₀.</span>
+          </li>
+        </ul>
+        <p class="text-xs text-slate-500 italic pt-1">
+          * Considerando um nível de significância (α) de 5%.
+        </p>
+      </div>
+
+      <!-- EXEMPLO PRÁTICO -->
+      <div class="bg-indigo-50/80 rounded-xl p-5 border border-indigo-100 space-y-3">
+        <h3 class="text-lg font-bold text-indigo-950">Exemplo prático:</h3>
+        <p class="text-sm text-slate-700">
+          Queremos comparar a pressão arterial média de homens e mulheres.
+        </p>
+        <div class="space-y-2 text-sm">
+          <div class="bg-white p-3 rounded-lg border border-indigo-100 font-medium text-slate-800">
+            <strong>H₀:</strong> não existe diferença entre as médias populacionais.
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3 pt-1">
+            <div class="bg-white p-3.5 rounded-lg border border-emerald-200 text-xs text-slate-700">
+              <span class="font-bold text-emerald-700 block text-sm mb-0.5">p = 0,02</span>
+              a diferença observada é estatisticamente significativa.
+            </div>
+            <div class="bg-white p-3.5 rounded-lg border border-slate-200 text-xs text-slate-700">
+              <span class="font-bold text-slate-700 block text-sm mb-0.5">p = 0,30</span>
+              a diferença observada não é estatisticamente significativa.
+            </div>
+          </div>
         </div>
-        <div class="bg-white px-6 py-4 rounded-xl shadow-sm border border-indigo-100 text-center shrink-0">
-          <span class="text-xs font-semibold text-slate-400 uppercase block">Padrão na Ciência</span>
-          <span class="text-2xl font-extrabold text-indigo-600">p &lt; 0,05</span>
-          <span class="text-xs text-slate-500 block mt-1">(Significativo / Rejeita H₀)</span>
+      </div>
+
+      <!-- O QUE O P-VALOR NÃO INDICA? -->
+      <div class="space-y-2">
+        <h3 class="text-lg font-bold text-slate-800">O que o p-valor NÃO indica?</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm leading-relaxed">
+          <li>Não indica a magnitude da diferença ou associação.</li>
+          <li>Não demonstra causalidade.</li>
+          <li>Não determina, isoladamente, a relevância clínica ou prática de um resultado.</li>
+        </ul>
+      </div>
+
+      <!-- OBS IMPORTANTE -->
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl flex items-start space-x-3">
+        <i data-lucide="alert-circle" class="text-amber-600 shrink-0 mt-0.5"></i>
+        <div>
+          <h4 class="font-semibold text-amber-900 text-sm uppercase tracking-wide">OBS importante</h4>
+          <p class="text-amber-800 text-sm mt-1">
+            O p-valor indica a compatibilidade dos dados com a hipótese nula, mas não informa o tamanho nem a importância do efeito observado.
+          </p>
         </div>
       </div>
     </section>
@@ -318,13 +372,13 @@
       {
         pergunta: "5. Na prática científica padrão, qual é o limite máximo aceito para o valor p (p-value) para considerar um resultado estatisticamente significativo?",
         opcoes: [
-          { id: "A", texto: "p < 0,05" },
+          { id: "A", texto: "p ≤ 0,05" },
           { id: "B", texto: "p > 0,50" },
           { id: "C", texto: "p = 1,00" },
           { id: "D", texto: "p ≥ 0,95" }
         ],
         correta: "A",
-        explicacao: "O patamar padrão na ciência é p < 0,05, indicando que há menos de 5% de probabilidade de o resultado ter ocorrido por acaso."
+        explicacao: "O patamar padrão na ciência é p ≤ 0,05, indicando que há evidências suficientes para rejeitar a hipótese nula."
       }
     ];
 
