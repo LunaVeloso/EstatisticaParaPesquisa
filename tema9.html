@@ -36,7 +36,7 @@
         Medidas de Associação (OR, RR e RP)
       </h1>
       <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
-        Entenda o Risco Relativo (RR), a Razão de Chances (OR) e a Razão de Prevalência (RP) aplicados à pesquisa científica.
+        Entenda o Risco Relativo (RR), a Razão de Chances (OR / Odds Ratio) e a Razão de Prevalência (RP) aplicados à pesquisa científica.
       </p>
     </div>
   </section>
@@ -64,7 +64,7 @@
             <span>Exposição (Causa / Fator)</span>
           </div>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Exemplos: Tabagismo, sedentarismo, falta de orientação bucal ou uso excessivo de telas.
+            Exemplos: Tabagismo, sedentarismo, prática de atividade física ou uso de telas.
           </p>
         </div>
 
@@ -74,7 +74,7 @@
             <span>Desfecho (Efeito / Resultado)</span>
           </div>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Exemplos: Doença periodontal, hipertensão arterial ou sintomas de ansiedade em adolescentes.
+            Exemplos: Doença periodontal, sobrepeso, hipertensão arterial ou sintomas de ansiedade.
           </p>
         </div>
       </div>
@@ -87,7 +87,7 @@
           <i data-lucide="git-compare"></i>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-slate-900">2. Risco Relativo (RR), Razão de Chances (OR) e Razão de Prevalência (RP)</h2>
+          <h2 class="text-2xl font-bold text-slate-900">2. Risco Relativo (RR), Razão de Chances (OR / Odds Ratio) e Razão de Prevalência (RP)</h2>
           <p class="text-xs text-slate-500">Qual a diferença e quando aplicar cada medida?</p>
         </div>
       </div>
@@ -105,46 +105,46 @@
             <h3 class="text-xl font-bold text-slate-900 mb-2">Risco Relativo (RR)</h3>
             
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Compara a probabilidade de um <strong>novo evento (incidência)</strong> ocorrer no grupo exposto em relação ao não exposto acompanhado ao longo do tempo.
+              Compara a probabilidade de um <strong>novo evento (incidência)</strong> ocorrer no grupo exposto em relação ao grupo não exposto acompanhado ao longo do tempo.
             </p>
 
             <div class="bg-white p-3.5 rounded-xl border border-indigo-100 mb-4 shadow-xs">
               <span class="text-[11px] font-bold text-indigo-700 uppercase block mb-1">O que responde:</span>
               <p class="text-xs text-slate-700 italic">
-                "Quantas vezes maior é o risco do grupo exposto em comparação ao não exposto?"
+                "Quantas vezes o risco do grupo exposto representa em comparação ao risco do não exposto?"
               </p>
             </div>
           </div>
 
           <div class="bg-indigo-100/60 p-3 rounded-lg border border-indigo-200 text-xs text-indigo-950">
-            <strong>Exemplo:</strong> <strong>RR = 3,0</strong> indica 3 vezes mais risco de desenvolver a doença nos expostos.
+            <strong>Exemplo:</strong> <strong>RR = 3,0</strong> indica que os expostos apresentam 3 vezes o risco observado no grupo não exposto.
           </div>
         </div>
 
-        <!-- CARD 2: RAZÃO DE CHANCES (OR) -->
+        <!-- CARD 2: RAZÃO DE CHANCES (OR / ODDS RATIO) -->
         <div class="p-6 rounded-2xl border-2 border-indigo-200 bg-indigo-50/30 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100 px-2.5 py-1 rounded-full">Caso-Controle</span>
-              <span class="text-xs font-bold text-indigo-600">Chance Retrospectiva</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100 px-2.5 py-1 rounded-full">Caso-Controle e Transversal</span>
+              <span class="text-xs font-bold text-indigo-600">Odds Ratio</span>
             </div>
 
             <h3 class="text-xl font-bold text-slate-900 mb-2">Razão de Chances (OR)</h3>
             
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Compara a <strong>chance</strong> de um evento ter ocorrido no passado em pessoas doentes (casos) vs. saudáveis (controles).
+              Também conhecida como <strong>Odds Ratio (OR)</strong>. Não é exclusiva para estudo de caso-controle; pode ser usada em estudos transversais também. Compara a chance do evento entre expostos e não expostos.
             </p>
 
             <div class="bg-white p-3.5 rounded-xl border border-indigo-100 mb-4 shadow-xs">
               <span class="text-[11px] font-bold text-indigo-700 uppercase block mb-1">O que responde:</span>
               <p class="text-xs text-slate-700 italic">
-                "Qual a chance de a exposição ter acontecido no grupo doente vs. no saudável?"
+                "Qual a chance de a doença ocorrer no grupo exposto em relação ao não exposto?"
               </p>
             </div>
           </div>
 
           <div class="bg-indigo-100/60 p-3 rounded-lg border border-indigo-200 text-xs text-indigo-950">
-            <strong>Exemplo:</strong> <strong>OR = 2,0</strong> indica 2 vezes mais chance de histórico de exposição nos doentes.
+            <strong>Exemplo:</strong> <strong>OR = 2,0</strong> indica que o grupo exposto ao fator de risco tem 2 vezes a chance (o dobro de chance) de apresentar a doença, quando comparado ao grupo não exposto.
           </div>
         </div>
 
@@ -165,89 +165,81 @@
             <div class="bg-white p-3.5 rounded-xl border border-indigo-100 mb-4 shadow-xs">
               <span class="text-[11px] font-bold text-indigo-700 uppercase block mb-1">O que responde:</span>
               <p class="text-xs text-slate-700 italic">
-                "Quantas vezes é mais prevalente a condição no grupo exposto no momento da pesquisa?"
+                "Quantas vezes a prevalência da condição no grupo exposto representa em comparação ao não exposto no momento da pesquisa?"
               </p>
             </div>
           </div>
 
           <div class="bg-indigo-100/60 p-3 rounded-lg border border-indigo-200 text-xs text-indigo-950">
-            <strong>Exemplo:</strong> <strong>RP = 1,8</strong> indica que a condição é 80% mais prevalente no grupo exposto hoje.
+            <strong>Exemplo:</strong> <strong>RP = 2,0</strong> indica que a prevalência da condição é 2 vezes a prevalência observada entre não expostos (o dobro).
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SEÇÃO 3: EXEMPLOS ESPECÍFICOS DE CADA UM DOS TEMAS -->
+    <!-- SEÇÃO 3: EXEMPLOS PRÁTICOS APLICADOS (FATOR DE RISCO vs FATOR DE PROTEÇÃO) -->
     <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-6">
       <div class="flex items-center space-x-3">
         <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
           <i data-lucide="layers"></i>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-slate-900">3. Exemplos Práticos Aplicados por Tema</h2>
-          <p class="text-xs text-slate-500">Veja como OR, RR e RP se manifestam em cenários reais de pesquisa</p>
+          <h2 class="text-2xl font-bold text-slate-900">3. Exemplos Práticos Aplicados</h2>
+          <p class="text-xs text-slate-500">Aplicações de OR, RR e RP para Fator de Risco (&gt; 1) e Fator de Proteção (&lt; 1)</p>
         </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 gap-6">
 
-        <!-- TEMA 1: SAÚDE BUCAL -->
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
-          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm">
-            <i data-lucide="smile" class="w-4 h-4"></i>
-            <span>Tema 1: Saúde Bucal</span>
+        <!-- CENÁRIO 1: FATOR DE RISCO (> 1) -->
+        <div class="p-6 rounded-xl border border-rose-200 bg-rose-50/30 space-y-4">
+          <div class="flex items-center space-x-2 text-rose-700 font-bold text-base">
+            <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+            <span>Exemplo 1: Fator de Risco (&gt; 1,0)</span>
           </div>
-          <p class="text-xs text-slate-500 font-medium">Exposição: Tabagismo | Desfecho: Doença Periodontal</p>
-          <div class="space-y-2 text-xs text-slate-700">
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Caso-Controle (OR = 2,5):</strong> A chance de encontrar histórico de tabagismo em pacientes com periodontite foi 2,5 vezes maior.
+          <p class="text-xs text-slate-600 font-medium">Exposição: Tabagismo | Desfecho: Doença Periodontal</p>
+          
+          <div class="space-y-3 text-xs text-slate-700">
+            <div class="p-3 bg-white rounded-lg border border-rose-100 shadow-xs">
+              <strong class="text-rose-900 block mb-1">Caso-Controle ou Transversal (OR = 2,5):</strong>
+              A chance de doença periodontal em fumantes é 2,5 vezes a chance observada entre não fumantes.
             </div>
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Coorte (RR = 2,0):</strong> Fumantes tiveram 2 vezes mais risco de desenvolver novos casos de periodontite em 5 anos.
+
+            <div class="p-3 bg-white rounded-lg border border-rose-100 shadow-xs">
+              <strong class="text-rose-900 block mb-1">Coorte (RR = 2,0):</strong>
+              O risco de doença periodontal em pacientes fumantes é 2 vezes o risco observado entre não fumantes, ou seja, fumantes têm o dobro do risco.
             </div>
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Transversal (RP = 2,0):</strong> A doença periodontal foi 2 vezes mais prevalente entre fumantes avaliados hoje.
+
+            <div class="p-3 bg-white rounded-lg border border-rose-100 shadow-xs">
+              <strong class="text-rose-900 block mb-1">Transversal (RP = 2,0):</strong>
+              A prevalência de doença periodontal em fumantes é 2 vezes a prevalência observada entre não fumantes. Ou seja, a prevalência de doença periodontal é o dobro entre fumantes, quando comparada aos não fumantes.
             </div>
           </div>
         </div>
 
-        <!-- TEMA 2: MEDICINA E CARDIOLOGIA -->
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
-          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm">
-            <i data-lucide="heart-pulse" class="w-4 h-4"></i>
-            <span>Tema 2: Cardiologia</span>
+        <!-- CENÁRIO 2: FATOR DE PROTEÇÃO (< 1) -->
+        <div class="p-6 rounded-xl border border-emerald-200 bg-emerald-50/30 space-y-4">
+          <div class="flex items-center space-x-2 text-emerald-700 font-bold text-base">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <span>Exemplo 2: Fator de Proteção (&lt; 1,0)</span>
           </div>
-          <p class="text-xs text-slate-500 font-medium">Exposição: Sedentarismo | Desfecho: Hipertensão</p>
-          <div class="space-y-2 text-xs text-slate-700">
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Caso-Controle (OR = 1,8):</strong> A chance de histórico sedentário foi 1,8 vez maior nos pacientes hipertensos.
+          <p class="text-xs text-slate-600 font-medium">Exposição: Atividade Física | Desfecho: Sobrepeso</p>
+          
+          <div class="space-y-3 text-xs text-slate-700">
+            <div class="p-3 bg-white rounded-lg border border-emerald-100 shadow-xs">
+              <strong class="text-emerald-900 block mb-1">Caso-Controle ou Transversal (OR = 0,5):</strong>
+              A chance de sobrepeso entre quem pratica atividade física é metade da chance observada para quem não pratica.
             </div>
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Coorte (RR = 1,5):</strong> Indivíduos sedentários tiveram 1,5 vez mais risco de vir a desenvolver hipertensão.
-            </div>
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Transversal (RP = 1,6):</strong> A prevalência de hipertensão foi 1,6 vez maior no grupo sedentário no rastreamento.
-            </div>
-          </div>
-        </div>
 
-        <!-- TEMA 3: SAÚDE COLETIVA E PSICOLOGIA -->
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
-          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm">
-            <i data-lucide="brain-circuit" class="w-4 h-4"></i>
-            <span>Tema 3: Psicologia</span>
-          </div>
-          <p class="text-xs text-slate-500 font-medium">Exposição: Excesso de Telas | Desfecho: Ansiedade</p>
-          <div class="space-y-2 text-xs text-slate-700">
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Caso-Controle (OR = 2,4):</strong> A chance de uso excessivo de telas foi 2,4 vezes maior nos jovens com ansiedade.
+            <div class="p-3 bg-white rounded-lg border border-emerald-100 shadow-xs">
+              <strong class="text-emerald-900 block mb-1">Coorte (RR = 0,6):</strong>
+              O risco de sobrepeso em quem pratica exercício físico é 0,6 vezes o risco observado entre quem não pratica. Ou seja, entre os ativos fisicamente há uma redução de 40% no risco de sobrepeso.
             </div>
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Coorte (RR = 2,0):</strong> Jovens com alto uso de telas tiveram 2 vezes mais risco de manifestar ansiedade em 2 anos.
-            </div>
-            <div class="p-2.5 bg-white rounded-lg border border-slate-200">
-              <strong>Transversal (RP = 2,2):</strong> A ansiedade foi 2,2 vezes mais prevalente entre adolescentes com alto uso de telas.
+
+            <div class="p-3 bg-white rounded-lg border border-emerald-100 shadow-xs">
+              <strong class="text-emerald-900 block mb-1">Transversal (RP = 0,3):</strong>
+              A prevalência de sobrepeso entre praticantes de atividade física é 0,3 vezes a prevalência observada entre não praticantes. Ou seja, entre os ativos fisicamente há uma redução de 70% na prevalência de sobrepeso.
             </div>
           </div>
         </div>
@@ -255,7 +247,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 4: COMO INTERPRETAR OS RESULTADOS (REGRA DO 1 COM EXEMPLOS NA PRÁTICA) -->
+    <!-- SEÇÃO 4: COMO INTERPRETAR OS RESULTADOS (REGRA DO 1) -->
     <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80 space-y-6">
       <div class="flex items-center space-x-3 mb-2">
         <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
@@ -287,7 +279,7 @@
               Efeito Neutro
             </span>
             <div class="p-2.5 bg-white rounded-lg border border-slate-200 text-[11px] text-slate-600">
-              <strong>Exemplo Prático:</strong> Se um creme dental sem flúor tem RR = 1,0 para cárie, ele não protege nem causa mais cáries do que o grupo controle.
+              <strong>Exemplo Prático:</strong> Se um creme dental sem flúor tem RR = 1,0 para cárie, ele não altera o risco em relação ao grupo controle.
             </div>
           </div>
         </div>
@@ -295,7 +287,7 @@
         <!-- VALOR MAIOR QUE 1 -->
         <div class="p-5 rounded-xl border-2 border-rose-200 bg-rose-50/40 flex flex-col justify-between">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 block mb-1">Aumenta o Risco</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 block mb-1">Aumenta o Risco / Chance</span>
             <h3 class="text-xl font-extrabold text-rose-600 mb-2">RR, OR ou RP &gt; 1</h3>
             <p class="text-xs text-slate-600 leading-relaxed mb-3">
               Indica um <strong>Fator de Risco</strong>. A exposição aumenta a chance, o risco ou a prevalência do evento.
@@ -303,10 +295,10 @@
           </div>
           <div class="space-y-2">
             <span class="inline-block bg-rose-100 text-rose-800 text-[11px] font-semibold px-2.5 py-1 rounded-md">
-              Exemplo: RR = 1,5 (+50% de risco)
+              Exemplo: RR = 2,0 (o dobro do risco)
             </span>
             <div class="p-2.5 bg-white rounded-lg border border-rose-200 text-[11px] text-slate-600">
-              <strong>Exemplo Prático:</strong> Se a RP de hipertensão em sedentários é 1,6, o risco/prevalência aumenta em 60% em relação aos ativos.
+              <strong>Exemplo Prático:</strong> Se o risco de doença em fumantes é RR = 2,0, o risco é 2 vezes o risco observado entre não fumantes.
             </div>
           </div>
         </div>
@@ -314,18 +306,18 @@
         <!-- VALOR MENOR QUE 1 -->
         <div class="p-5 rounded-xl border-2 border-emerald-200 bg-emerald-50/40 flex flex-col justify-between">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">Reduz o Risco</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">Reduz o Risco / Chance</span>
             <h3 class="text-xl font-extrabold text-emerald-600 mb-2">RR, OR ou RP &lt; 1</h3>
             <p class="text-xs text-slate-600 leading-relaxed mb-3">
-              Indica um <strong>Fator de Proteção</strong>. A exposição diminui o risco, chance ou prevalência do evento.
+              Indica um <strong>Fator de Proteção</strong>. A exposição diminui o risco, a chance ou a prevalência do evento.
             </p>
           </div>
           <div class="space-y-2">
             <span class="inline-block bg-emerald-100 text-emerald-800 text-[11px] font-semibold px-2.5 py-1 rounded-md">
-              Exemplo: RR = 0,80 (-20% de risco)
+              Exemplo: RR = 0,6 (-40% no risco)
             </span>
             <div class="p-2.5 bg-white rounded-lg border border-emerald-200 text-[11px] text-slate-600">
-              <strong>Exemplo Prático:</strong> Se o RR de uma vacina é 0,20, ela reduz em 80% o risco de infecção em comparação ao placebo.
+              <strong>Exemplo Prático:</strong> Se o RR de sobrepeso em quem pratica exercício é 0,6, o risco é 0,6 vezes o observado em não praticantes (redução de 40%).
             </div>
           </div>
         </div>
@@ -336,7 +328,7 @@
       <div class="bg-indigo-50/80 border border-indigo-100 p-4 rounded-xl flex items-start space-x-3">
         <i data-lucide="shield-check" class="text-indigo-600 shrink-0 mt-0.5 w-5 h-5"></i>
         <p class="text-xs text-indigo-950 leading-relaxed">
-          <strong>Aplicações do Fator de Proteção (&lt; 1):</strong> Muito comum em testes clínicos de vacinas, tratamentos preventivos ou mudanças saudáveis na alimentação, onde o objetivo da intervenção é justamente reduzir a probabilidade do problema surgir.
+          <strong>Aplicações do Fator de Proteção (&lt; 1):</strong> Muito comum em estudos de atividade física, vacinas, tratamentos preventivos ou orientações de saúde bucal, onde a intervenção busca justamente reduzir a ocorrência do desfecho.
         </p>
       </div>
     </section>
@@ -425,18 +417,18 @@
 
     const perguntasQuiz = [
       {
-        pergunta: "1. Qual medida de associação avalia a chance retrospectiva de exposição comparando pessoas já doentes (casos) com pessoas saudáveis (controles)?",
+        pergunta: "1. Qual medida de associação avalia a chance de exposição comparando pessoas doentes (casos) com pessoas saudáveis (controles) ou em estudos transversais?",
         opcoes: [
           { id: "A", texto: "Risco Relativo (RR)" },
           { id: "B", texto: "Razão de Prevalência (RP)" },
-          { id: "C", texto: "Razão de Chances (OR)" },
+          { id: "C", texto: "Razão de Chances / Odds Ratio (OR)" },
           { id: "D", texto: "Desvio Padrão (DP)" }
         ],
         correta: "C",
-        explicacao: "A Razão de Chances (OR - Odds Ratio) é a medida padrão utilizada em estudos retrospectivos do tipo caso-controle."
+        explicacao: "A Razão de Chances (OR - Odds Ratio) é a medida utilizada em estudos de caso-controle e também pode ser aplicada em estudos transversais."
       },
       {
-        pergunta: "2. Em um estudo de coorte prospectivo sobre cardiologia, os pesquisadores acompanham indivíduos sedentários e ativos ao longo do tempo. Qual métrica mede novos casos de hipertensão?",
+        pergunta: "2. Em um estudo de coorte prospectivo, os pesquisadores acompanham indivíduos ao longo do tempo. Qual métrica mede o risco de desenvolvimento de novos casos?",
         opcoes: [
           { id: "A", texto: "Risco Relativo (RR)" },
           { id: "B", texto: "Razão de Prevalência (RP)" },
@@ -444,7 +436,7 @@
           { id: "D", texto: "Erro Tipo I" }
         ],
         correta: "A",
-        explicacao: "O Risco Relativo (RR) mede a incidência de novos eventos ao longo do tempo em estudos prospectivos de coorte."
+        explicacao: "O Risco Relativo (RR) mede a incidência de novos eventos ao longo do tempo em estudos de coorte."
       },
       {
         pergunta: "3. Qual é a principal característica metodológica da Razão de Prevalência (RP)?",
@@ -455,7 +447,7 @@
           { id: "D", texto: "Substituir inteiramente o teste do p-valor." }
         ],
         correta: "B",
-        explicacao: "A RP avalia a proporção de casos já existentes (prevalência) em um único instante, sendo ideal para estudos transversais (cross-sectional)."
+        explicacao: "A RP avalia a proporção de casos já existentes (prevalência) em um único instante, sendo ideal para estudos transversais."
       },
       {
         pergunta: "4. O que indica uma medida de associação (OR, RR ou RP) cujo valor calculado é exatamente 1,0?",
@@ -469,37 +461,37 @@
         explicacao: "O valor 1,0 é o ponto neutro (nulidade), mostrando que a exposição não altera a frequência ou probabilidade do desfecho."
       },
       {
-        pergunta: "5. Se um fator de exposição apresenta uma medida de associação igual a 1,5 (RR ou OR = 1,5), como ele é classificado?",
+        pergunta: "5. Se um fator de exposição apresenta uma RR = 1,5, como ele é classificado?",
         opcoes: [
           { id: "A", texto: "Fator de Proteção" },
-          { id: "B", texto: "Fator de Risco (aumenta em 50% o risco do evento)" },
+          { id: "B", texto: "Fator de Risco (o risco nos expostos é 1,5 vez o risco nos não expostos)" },
           { id: "C", texto: "Efeito Neutro" },
           { id: "D", texto: "Erro Amostral Tipo II" }
         ],
         correta: "B",
-        explicacao: "Valores maiores que 1,0 indicam Fator de Risco, significando que a exposição eleva a chance ou o risco do evento ocorrer."
+        explicacao: "Valores maiores que 1,0 indicam Fator de Risco, significando que o risco é superior no grupo exposto quando comparado ao não exposto."
       },
       {
-        pergunta: "6. O que significa na prática um resultado de Risco Relativo (RR) menor que 1,0 (ex: RR = 0,80)?",
+        pergunta: "6. Em um estudo de coorte comparando praticantes de exercício físico e sobrepeso, o RR obtido foi de 0,6. Como esse resultado deve ser interpretado?",
         opcoes: [
-          { id: "A", texto: "A exposição atua como Fator de Proteção, reduzindo em 20% o risco do desfecho." },
-          { id: "B", texto: "A exposição duplica a chance de adoecer." },
-          { id: "C", texto: "O estudo não tem validade estatística." },
-          { id: "D", texto: "Trata-se de um ponto neutro." }
+          { id: "A", texto: "O risco de sobrepeso em quem pratica exercício é 0,6 vezes o risco observado entre quem não pratica (redução de 40% no risco)." },
+          { id: "B", texto: "A prática de exercício aumenta o risco de sobrepeso em 60%." },
+          { id: "C", texto: "A atividade física não altera o risco de sobrepeso." },
+          { id: "D", texto: "O resultado é inválido pois é menor que 1." }
         ],
         correta: "A",
-        explicacao: "Valores menores que 1,0 representam Fator de Proteção. Um RR de 0,80 significa que o risco foi reduzido em 20% no grupo exposto."
+        explicacao: "Um RR de 0,6 indica que a exposição é um Fator de Proteção (< 1), representando um risco 0,6 vezes o do grupo não exposto, ou seja, uma redução de 40% no risco."
       },
       {
-        pergunta: "7. Em uma pesquisa de Psicologia sobre uso excessivo de telas e ansiedade em adolescentes, o que significa uma Razão de Prevalência (RP) igual a 2,2?",
+        pergunta: "7. Em uma pesquisa de Psicologia sobre uso excessivo de telas e ansiedade em adolescentes, qual alternativa interpreta corretamente uma Razão de Prevalência (RP) igual a 2,2?",
         opcoes: [
-          { id: "A", texto: "Os sintomas ansiosos são 2,2 vezes mais prevalentes entre os adolescentes expostos ao alto uso de telas." },
+          { id: "A", texto: "A prevalência de sintomas ansiosos entre adolescente com alto uso de telas é 2,2 vezes a prevalência observada entre os adolescentes que não apresentam alto uso de tela" },
           { id: "B", texto: "O uso de telas protege contra a ansiedade." },
           { id: "C", texto: "Apenas 2,2% dos jovens possuem ansiedade." },
           { id: "D", texto: "A pesquisa falhou metodologicamente." }
         ],
         correta: "A",
-        explicacao: "Uma RP de 2,2 indica que a condição desfecho é 2,2 vezes mais frequente (prevalente) no grupo exposto."
+        explicacao: "Uma RP de 2,2 indica que a prevalência do desfecho no grupo exposto é 2,2 vezes a prevalência observada no grupo não exposto."
       }
     ];
 
